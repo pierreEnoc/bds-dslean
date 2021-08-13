@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -32,6 +33,9 @@ public class User implements Serializable {
 	   joinColumns = @JoinColumn(name = "user_id"),
 	   inverseJoinColumns = @JoinColumn(name ="role_id"))
 	private Set<Role> roles = new HashSet<>();
+	
+	@OneToMany(mappedBy = "user")
+	private Set<Notification> notifications = new HashSet<>();
 	
 	public User() {
 		
@@ -115,6 +119,10 @@ public class User implements Serializable {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", roles=" + roles
 				+ "]";
+	}
+
+	public Set<Notification> getNotifications() {
+		return notifications;
 	}
 	
 	
