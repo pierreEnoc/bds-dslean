@@ -86,10 +86,6 @@ public class User implements Serializable {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -121,8 +117,9 @@ public class User implements Serializable {
 				+ "]";
 	}
 
-	public Set<Notification> getNotifications() {
-		return notifications;
+
+	public void setNotifications(Set<Notification> notifications) {
+		this.notifications = notifications;
 	}
 	
 	
