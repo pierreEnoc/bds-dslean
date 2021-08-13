@@ -42,6 +42,9 @@ public abstract class Lesson implements Serializable {
 	)
 	private Set<Enrollment> enrollmentsDone = new HashSet<>();
 	
+	
+	//private Set<Topic> topics = new HashSet<>();
+	
 	public Lesson() {
 		
 	}
@@ -120,5 +123,6 @@ public abstract class Lesson implements Serializable {
 			return false;
 		return true;
 	}
+
 	
 }
